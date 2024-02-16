@@ -1,0 +1,19 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold; 
+}
+
+.form-group input {
+    width: 100%; 
+    padding: 5px; 
+    border: 1px solid #ccc;
+}
+
+.form-group span {
+    color: red; 
+    font-size: 15px; 
+    font-style: italic; 
+}

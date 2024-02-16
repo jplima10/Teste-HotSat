@@ -30,7 +30,7 @@ class ProdutosController extends Controller
             'nome' => 'required|max:50',
             'preco' => 'required|numeric',
             'quantidade' => 'required|integer',
-            'codigo_de_barras' => 'nullable|unique:produtos,codigo_de_barras|max:255',
+            'codigo_de_barras' => 'required|unique:produtos,codigo_de_barras|max:255',
         ]);
 
         $produto = Produto::create($request->all());
@@ -56,7 +56,7 @@ class ProdutosController extends Controller
             'nome' => 'required|max:50',
             'preco' => 'required|numeric',
             'quantidade' => 'required|integer',
-            'codigo_de_barras' => 'nullable|unique:produtos,codigo_de_barras|max:255',
+            'codigo_de_barras' => 'required|unique:produtos,codigo_de_barras|max:255',
         ]);
 
         $produto->update($request->all());
