@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 class ProdutosController extends Controller
 {
     public function index(Request $request)
-    {
-        $produtos = Produto::where('nome', 'like', '%' . $request->nome . '%')->paginate(10);
-        return view('produtos.index', compact('produtos'));
-    }
+{
+    $produtos = Produto::where(function ($query) use ($request) {
+        $query->where('nome', 'like', '%' . $request->nome . '%')
+              ->orWhere('codigo_de_barras', 'like', '%' . $request->nome . '%');
+    })->paginate(10);
+    
+    return view('produtos.index', compact('produtos'));
+}
+
     
 
     public function create()
@@ -24,7 +29,8 @@ class ProdutosController extends Controller
         $request->validate([
             'nome' => 'required|max:50',
             'preco' => 'required|numeric',
-            'quantidade' => 'required|integer'
+            'quantidade' => 'required|integer',
+            'codigo_de_barras' => 'nullable|unique:produtos,codigo_de_barras|max:255',
         ]);
 
         $produto = Produto::create($request->all());
@@ -49,7 +55,8 @@ class ProdutosController extends Controller
         $request->validate([
             'nome' => 'required|max:50',
             'preco' => 'required|numeric',
-            'quantidade' => 'required|integer'
+            'quantidade' => 'required|integer',
+            'codigo_de_barras' => 'nullable|unique:produtos,codigo_de_barras|max:255',
         ]);
 
         $produto->update($request->all());

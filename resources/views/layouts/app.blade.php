@@ -16,7 +16,7 @@
     <div class="container">
         <img src="logo.drogaria.png" width="35px">
         <a class="navbar-brand" href="/">Drogaria Venda Mais</a>
-        <i class="fa-solid fa-capsules" style="color: #fa0000;"></i>
+        {{-- <i class="fa-solid fa-capsules" style="color: #fa0000;"></i> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>

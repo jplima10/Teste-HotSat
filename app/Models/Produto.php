@@ -10,5 +10,6 @@ protected $fillable = [
         'nome',
         'preco',
         'quantidade',
+        'codigo_de_barras'
     ];
 }

@@ -18,6 +18,10 @@
                 <label for="quantidade">Quantidade:</label>
                 <input type="text" class="form-control" id="quantidade" name="quantidade" value="{{ $produto->quantidade }}">
             </div>
+            <div class="form-group">
+                <label for="codigo_de_barras">Código de Barras:</label>
+                <input type="text" class="form-control" id="codigo_de_barras" name="codigo_de_barras">
+            </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar</button>
         </form>
