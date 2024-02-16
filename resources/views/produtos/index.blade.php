@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div></div>
     <div class="container">
         <h1 class="mb-4">Medicamentos</h1>
         <form action="{{ route('produtos.index') }}" method="GET" class="form-inline mb-3">
